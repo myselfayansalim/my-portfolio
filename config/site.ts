@@ -1,0 +1,37 @@
+export const siteConfig = {
+  name: "Ayan Shaikh - Senior Software Developer",
+  authorName: "Ayan Shaikh",
+  username: "myselfayansalim",
+  description:
+    "Ayan Shaikh - Senior Software Developer with 4+ years of experience building scalable full-stack web applications, AI-powered tools, and browser automation systems. Explore live projects, experience, and skills.",
+  url: "https://ayansalim.dev",
+  links: {
+    github: "https://github.com/myselfayansalim",
+    linkedin: "https://www.linkedin.com/in/ayan-shaikh-a222b7261",
+    templateRepo: "https://github.com/namanbarkiya/minimal-next-portfolio",
+  },
+  ogImage:
+    "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/naman_portfolio_og_image.png",
+  iconIco: "/favicon.png",
+  logoIcon: "/favicon.png",
+  keywords: [
+    "Ayan Shaikh",
+    "Senior Software Developer",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer",
+    "Node.js Developer",
+    "AI Integration",
+    "Web Automation",
+    "Playwright",
+    "n8n Automation",
+    "OpenAI API",
+    "TypeScript",
+    "MongoDB",
+    "PostgreSQL",
+    "IBR Infotech",
+    "Indore Developer",
+    "Software Engineer India",
+    "Web Developer Portfolio",
+  ],
+};
