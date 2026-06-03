@@ -85,13 +85,13 @@ export const Projects: ProjectInterface[] = [
         title: "Property Listings",
         description:
           "Dynamic property listing pages powered by Strapi CMS, editable by non-technical admins.",
-        imgArr: [],
+        imgArr: ["/projects/brixfox/1.png"],
       },
       {
         title: "Admin Panel",
         description:
           "Strapi-powered admin interface for managing properties, media, and content without code.",
-        imgArr: [],
+        imgArr: ["/projects/brixfox/2.png", "/projects/brixfox/3.png"],
       },
     ],
     descriptionDetails: {

@@ -89,14 +89,36 @@ export default async function Project({ params }: ProjectPageProps) {
         </div>
       </div>
 
-      <Image
-        src={project.companyLogoImg}
-        alt={project.companyName}
-        width={720}
-        height={405}
-        className="my-8 rounded-md border bg-muted transition-colors"
-        priority
-      />
+      {(() => {
+        const coverImage = project.pagesInfoArr[0]?.imgArr[0] || project.companyLogoImg;
+        const restImages = project.pagesInfoArr.flatMap((p) => p.imgArr).slice(1);
+        return (
+          <>
+            <Image
+              src={coverImage}
+              alt={project.companyName}
+              width={720}
+              height={405}
+              className="my-8 rounded-md border bg-muted transition-colors"
+              priority
+            />
+            {restImages.length > 0 && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+                {restImages.map((img, i) => (
+                  <div key={i} className="relative w-full h-[160px] bg-muted rounded-md border">
+                    <Image
+                      src={img}
+                      alt={`${project.companyName} screenshot ${i + 2}`}
+                      fill
+                      className="rounded-md object-contain transition-colors"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        );
+      })()}
 
       <div className="mb-7 ">
         <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
@@ -127,17 +149,6 @@ export default async function Project({ params }: ProjectPageProps) {
             </h3>
             <div>
               <p>{page.description}</p>
-              {page.imgArr.map((img, ind) => (
-                <Image
-                  src={img}
-                  key={ind}
-                  alt={img}
-                  width={720}
-                  height={405}
-                  className="my-4 rounded-md border bg-muted transition-colors"
-                  priority
-                />
-              ))}
             </div>
           </div>
         ))}
