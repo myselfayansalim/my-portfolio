@@ -10,8 +10,7 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/ayan-shaikh-a222b7261",
     templateRepo: "https://github.com/namanbarkiya/minimal-next-portfolio",
   },
-  ogImage:
-    "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/naman_portfolio_og_image.png",
+  ogImage: "https://ayansalim.dev/opengraph-image",
   iconIco: "/favicon.png",
   logoIcon: "/favicon.png",
   keywords: [
