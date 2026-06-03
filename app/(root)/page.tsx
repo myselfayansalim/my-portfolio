@@ -37,7 +37,7 @@ export default function IndexPage() {
     url: siteConfig.url,
     image: siteConfig.ogImage,
     jobTitle: "Senior Software Developer",
-    sameAs: [siteConfig.links.github, siteConfig.links.twitter],
+    sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
   };
 
   // Structured data for website as a software application (template)
