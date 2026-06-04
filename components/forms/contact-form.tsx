@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 import { useModalStore } from "@/hooks/use-modal-store";
 
 const formSchema = z.object({
@@ -26,13 +27,11 @@ const formSchema = z.object({
   message: z.string().min(10, {
     message: "Please write something more descriptive.",
   }),
-  social: z.string().url().optional().or(z.literal("")),
 });
 
 export function ContactForm() {
   const storeModal = useModalStore();
-
-  // const [open, setOpen] = useState(false);
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,33 +39,40 @@ export function ContactForm() {
       name: "",
       email: "",
       message: "",
-      social: "",
     },
   });
 
-  // 2. Define a submit handler.
+  const isSubmitting = form.formState.isSubmitting;
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
 
-      form.reset();
-
-      if (response.status === 200) {
+      if (response.ok) {
+        form.reset();
         storeModal.onOpen({
-          title: "Thankyou!",
+          title: "Message Sent!",
           description:
             "Your message has been received! I appreciate your contact and will get back to you shortly.",
           icon: Icons.successAnimated,
         });
+      } else {
+        toast({
+          title: "Something went wrong.",
+          description: "Failed to send your message. Please try again.",
+          variant: "destructive",
+        });
       }
-    } catch (err) {
-      console.log("Err!", err);
+    } catch {
+      toast({
+        title: "Something went wrong.",
+        description: "Failed to send your message. Please try again.",
+        variant: "destructive",
+      });
     }
   }
 
@@ -85,9 +91,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Enter your name" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -118,23 +121,16 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="social"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Social (optional)</FormLabel>
-              <FormControl>
-                <Input placeholder="Link for social account" {...field} />
-              </FormControl>
-              {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
-              <FormMessage />
-            </FormItem>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <>
+              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            "Send Message"
           )}
-        />
-        <Button type="submit">Submit</Button>
+        </Button>
       </form>
     </Form>
   );

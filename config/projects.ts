@@ -45,13 +45,27 @@ export const Projects: ProjectInterface[] = [
         title: "Store Dashboard",
         description:
           "Integrated dashboard managing store operations, inventory, and employee records from a single interface.",
-        imgArr: [],
+        imgArr: [
+          "/projects/mb-bride/1.png",
+          "/projects/mb-bride/2.png",
+          "/projects/mb-bride/3.png",
+          "/projects/mb-bride/4.png",
+          "/projects/mb-bride/5.png",
+          "/projects/mb-bride/6.png",
+        ],
       },
       {
         title: "Inventory & Order Management",
         description:
           "Real-time inventory tracking and order management system for the tuxedo and dress store.",
-        imgArr: [],
+        imgArr: [
+          "/projects/mb-bride/7.png",
+          "/projects/mb-bride/8.png",
+          "/projects/mb-bride/9.png",
+          "/projects/mb-bride/10.png",
+          "/projects/mb-bride/11.png",
+          "/projects/mb-bride/12.png",
+        ],
       },
     ],
     descriptionDetails: {
@@ -85,13 +99,17 @@ export const Projects: ProjectInterface[] = [
         title: "Property Listings",
         description:
           "Dynamic property listing pages powered by Strapi CMS, editable by non-technical admins.",
-        imgArr: ["/projects/brixfox/1.png"],
+        imgArr: [
+          "/projects/brixfox/1.png",
+          "/projects/brixfox/2.png",
+          "/projects/brixfox/3.png",
+        ],
       },
       {
         title: "Admin Panel",
         description:
           "Strapi-powered admin interface for managing properties, media, and content without code.",
-        imgArr: ["/projects/brixfox/2.png", "/projects/brixfox/3.png"],
+        imgArr: ["/projects/brixfox/4.png", "/projects/brixfox/5.png"],
       },
     ],
     descriptionDetails: {
@@ -134,13 +152,20 @@ export const Projects: ProjectInterface[] = [
         title: "Dispute Management",
         description:
           "Online dispute workflow that replaces physical letter mailing with a fully digital credit repair process.",
-        imgArr: [],
+        imgArr: [
+          "/projects/consumer-law/1.png",
+          "/projects/consumer-law/2.png",
+          "/projects/consumer-law/3.png",
+        ],
       },
       {
         title: "AI-Powered Letter Generation",
         description:
           "ChatGPT API integration that generates personalised credit dispute letters based on user data.",
-        imgArr: [],
+        imgArr: [
+          "/projects/consumer-law/4.png",
+          "/projects/consumer-law/5.png",
+        ],
       },
     ],
     descriptionDetails: {
@@ -175,7 +200,12 @@ export const Projects: ProjectInterface[] = [
         title: "Automation Dashboard",
         description:
           "React-based dashboard for configuring, running, and monitoring Razer Gold coupon purchase automations.",
-        imgArr: [],
+        imgArr: [
+          "/projects/rbot/1.png",
+          "/projects/rbot/2.png",
+          "/projects/rbot/3.png",
+          "/projects/rbot/4.png",
+        ],
       },
     ],
     descriptionDetails: {
@@ -209,13 +239,16 @@ export const Projects: ProjectInterface[] = [
         title: "AI Chat Interface",
         description:
           "Clean, embeddable chat UI that connects users to the AI agent for home repair support.",
-        imgArr: [],
+        imgArr: [
+          "/projects/oma-rental/1.png",
+          "/projects/oma-rental/2.png",
+        ],
       },
       {
         title: "n8n Automation Workflow",
         description:
           "n8n workflow orchestrating OpenAI calls, knowledge retrieval, and video resource surfacing.",
-        imgArr: [],
+        imgArr: ["/projects/oma-rental/3.png"],
       },
     ],
     descriptionDetails: {

@@ -8,6 +8,15 @@ export interface skillsInterface {
 }
 
 export const skillsUnsorted: skillsInterface[] = [
+  // ── AI ──────────────────────────────────────────────────────────────────────
+  {
+    name: "AI",
+    description:
+      "Building and integrating AI-powered features using LLMs, prompt engineering, and automation workflows.",
+    rating: 5,
+    icon: Icons.ai,
+  },
+
   // ── Frontend ────────────────────────────────────────────────────────────────
   {
     name: "Next.js",

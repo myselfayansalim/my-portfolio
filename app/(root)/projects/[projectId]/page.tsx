@@ -94,14 +94,15 @@ export default async function Project({ params }: ProjectPageProps) {
         const restImages = project.pagesInfoArr.flatMap((p) => p.imgArr).slice(1);
         return (
           <>
-            <Image
-              src={coverImage}
-              alt={project.companyName}
-              width={720}
-              height={405}
-              className="my-8 rounded-md border bg-muted transition-colors"
-              priority
-            />
+            <div className="relative w-full aspect-video my-8 rounded-md border bg-muted overflow-hidden">
+              <Image
+                src={coverImage}
+                alt={project.companyName}
+                fill
+                className="object-cover object-top rounded-md transition-colors"
+                priority
+              />
+            </div>
             {restImages.length > 0 && (
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
                 {restImages.map((img, i) => (
@@ -110,7 +111,7 @@ export default async function Project({ params }: ProjectPageProps) {
                       src={img}
                       alt={`${project.companyName} screenshot ${i + 2}`}
                       fill
-                      className="rounded-md object-contain transition-colors"
+                      className="rounded-md object-cover object-top transition-colors"
                     />
                   </div>
                 ))}
