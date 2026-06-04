@@ -1,15 +1,10 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import { ImageResponse } from "next/og";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function Image() {
-  const imgBuffer = readFileSync(join(process.cwd(), "public/hero.png"));
-  const imgBase64 = `data:image/png;base64,${imgBuffer.toString("base64")}`;
-
   return new ImageResponse(
     (
       <div
@@ -18,97 +13,84 @@ export default function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          padding: "60px 80px",
           fontFamily: "sans-serif",
+          padding: "60px 80px",
         }}
       >
-        {/* Left: profile photo */}
+        {/* Top accent line */}
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginRight: "64px",
-            flexShrink: 0,
+            width: "80px",
+            height: "4px",
+            background: "#a78bfa",
+            borderRadius: "2px",
+            marginBottom: "40px",
+          }}
+        />
+
+        {/* Name */}
+        <span
+          style={{
+            fontSize: "80px",
+            fontWeight: 700,
+            color: "#ffffff",
+            letterSpacing: "-2px",
+            lineHeight: 1.1,
+            textAlign: "center",
           }}
         >
-          <img
-            src={imgBase64}
-            width={220}
-            height={220}
-            style={{
-              borderRadius: "50%",
-              objectFit: "cover",
-              objectPosition: "center top",
-              border: "5px solid #a78bfa",
-            }}
-          />
-        </div>
+          Ayan Shaikh
+        </span>
 
-        {/* Right: text */}
+        {/* Title */}
+        <span
+          style={{
+            fontSize: "32px",
+            color: "#a78bfa",
+            marginTop: "20px",
+            fontWeight: 500,
+            textAlign: "center",
+          }}
+        >
+          Senior Software Developer
+        </span>
+
+        {/* Subtitle */}
+        <span
+          style={{
+            fontSize: "22px",
+            color: "#71717a",
+            marginTop: "16px",
+            textAlign: "center",
+          }}
+        >
+          Full Stack · AI Tools · Browser Automation
+        </span>
+
+        {/* Bottom accent line */}
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
+            width: "80px",
+            height: "4px",
+            background: "#a78bfa",
+            borderRadius: "2px",
+            marginTop: "40px",
+          }}
+        />
+
+        {/* URL */}
+        <span
+          style={{
+            fontSize: "20px",
+            color: "#52525b",
+            marginTop: "24px",
           }}
         >
-          <span
-            style={{
-              fontSize: "72px",
-              fontWeight: 700,
-              color: "#ffffff",
-              lineHeight: 1.1,
-              letterSpacing: "-1px",
-            }}
-          >
-            Ayan Shaikh
-          </span>
-
-          <span
-            style={{
-              fontSize: "30px",
-              color: "#a78bfa",
-              marginTop: "14px",
-              fontWeight: 500,
-            }}
-          >
-            Senior Software Developer
-          </span>
-
-          <span
-            style={{
-              fontSize: "22px",
-              color: "#71717a",
-              marginTop: "16px",
-            }}
-          >
-            Full Stack · AI Tools · Browser Automation
-          </span>
-
-          {/* Divider */}
-          <div
-            style={{
-              width: "80px",
-              height: "3px",
-              background: "#a78bfa",
-              marginTop: "28px",
-              borderRadius: "2px",
-            }}
-          />
-
-          <span
-            style={{
-              fontSize: "22px",
-              color: "#52525b",
-              marginTop: "20px",
-            }}
-          >
-            ayansalim.dev
-          </span>
-        </div>
+          my-portfolio-phi-seven-24.vercel.app
+        </span>
       </div>
     ),
     { width: 1200, height: 630 }
