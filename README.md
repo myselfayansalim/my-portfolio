@@ -2,7 +2,7 @@
 
 Personal developer portfolio built with Next.js, TypeScript, and Tailwind CSS.
 
-**Live site:** [my-portfolio-phi-seven-24.vercel.app](https://my-portfolio-phi-seven-24.vercel.app/)  
+**Live site:** [ayansalim.vercel.app](https://ayansalim.vercel.app/)  
 **Source code:** [github.com/myselfayansalim/my-portfolio](https://github.com/myselfayansalim/my-portfolio)
 
 ---

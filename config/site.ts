@@ -4,13 +4,13 @@ export const siteConfig = {
   username: "myselfayansalim",
   description:
     "Ayan Shaikh - Senior Software Developer with 4+ years of experience building scalable full-stack web applications, AI-powered tools, and browser automation systems. Explore live projects, experience, and skills.",
-  url: "https://my-portfolio-phi-seven-24.vercel.app",
+  url: "https://ayansalim.vercel.app",
   links: {
     github: "https://github.com/myselfayansalim",
     linkedin: "https://www.linkedin.com/in/ayan-shaikh-a222b7261",
     templateRepo: "https://github.com/myselfayansalim/my-portfolio",
   },
-  ogImage: "https://my-portfolio-phi-seven-24.vercel.app/opengraph-image",
+  ogImage: "https://ayansalim.vercel.app/opengraph-image",
   iconIco: "/favicon.png",
   logoIcon: "/favicon.png",
   keywords: [

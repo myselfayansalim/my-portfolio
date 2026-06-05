@@ -94,7 +94,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="paper"
+          defaultTheme="dark"
           themes={[
             "light",
             "dark",

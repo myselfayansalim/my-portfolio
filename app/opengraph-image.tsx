@@ -89,7 +89,7 @@ export default function Image() {
             marginTop: "24px",
           }}
         >
-          my-portfolio-phi-seven-24.vercel.app
+          ayansalim.vercel.app
         </span>
       </div>
     ),
